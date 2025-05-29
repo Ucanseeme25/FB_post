@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Caption Rewriter | Premium Social Media Tool</title>
+
+    <!-- Optimized for screen reader accessibility and semantic structure -->
+    <meta name="description" content="Professional Twitter caption rewriting tool using advanced AI">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           PREMIUM TWITTER REWRITER TOOL - CSS
+           Mobile-First Responsive Design
+           ============================================ */
+
+        /* CSS Custom Properties for Consistent Theming */
+        :root {
+            --primary-blue: #1DA1F2;
+            --primary-blue-hover: #1A91DA;
+            --primary-blue-active: #0d8bd9;
+            --text-primary: #14171A;
+            --text-secondary: #657786;
+            --text-muted: #AAB8C2;
+            --border-light: #E1E8ED;
+            --border-medium: #CCD6DD;
+            --background-white: #FFFFFF;
+            --background-light: #F7F9FA;
+            --background-hover: #F7F9FA;
+            --success-green: #17BF63;
+            --error-red: #E0245E;
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.12);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --radius-small: 8px;
+            --radius-medium: 12px;
+            --radius-large: 16px;
+            --transition-fast: 0.15s ease;
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Global Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Main Application Container */
+        .app-container {
+            min-height: 100vh;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        /* ============================================
+           HEADER SECTION
+           ============================================ */
+
+        .app-header {
+            text-align: center;
+            padding: 24px 0;
+        }
+
+        .header-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .app-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .app-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* ============================================
+           TOOL INTERFACE
+           ============================================ */
+
+        .tool-interface {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+
+        /* ============================================
+           INPUT SECTION
+           ============================================ */
+
+        .input-section {
+            background: var(--background-white);
+            border-radius: var(--radius-large);
+            padding: 32px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-light);
+        }
+
+        .input-container {
+            margin-bottom: 24px;
+        }
+
+        .paste-box-wrapper {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .paste-input {
+            width: 100%;
+            min-height: 120px;
+            padding: 16px 50px 16px 16px;
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-medium);
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--background-white);
+            resize: vertical;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .paste-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.1);
+        }
+
+        .paste-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .paste-icon-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: var(--background-hover);
+            border-radius: var(--radius-small);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .paste-icon-btn:hover {
+            background: var(--border-light);
+            color: var(--primary-blue);
+            transform: translateY(-1px);
+        }
+
+        .paste-icon-btn:active {
+            transform: translateY(0);
+        }
+
+        .clipboard-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .input-help-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* Generate Button */
+        .generate-section {
+            text-align: center;
+        }
+
+        .generate-button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: var(--radius-medium);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 160px;
+            justify-content: center;
+            transition: all var(--transition-smooth);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .generate-button:hover {
+            background: var(--primary-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .generate-button:active {
+            background: var(--primary-blue-active);
+            transform: translateY(0);
+        }
+
+        .generate-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading-spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        .generate-button.loading .btn-text {
+            opacity: 0.7;
+        }
+
+        .generate-button.loading .loading-spinner {
+            display: block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .generate-help-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 12px;
+        }
+
+        /* ============================================
+           OUTPUT SECTION
+           ============================================ */
+
+        .output-section {
+            background: var(--background-white);
+            border-radius: var(--radius-large);
+            padding: 32px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-light);
+        }
+
+        .tweet-preview-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Tweet Card Styling */
+        .tweet-card {
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-medium);
+            padding: 16px;
+            transition: box-shadow var(--transition-smooth);
+        }
+
+        .tweet-card:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tweet-header {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center; /* Vertically align avatar and text */
+            gap: 12px;
+            flex-grow: 1; /* Allow profile section to take available space */
+        }
+
+        .profile-avatar {
+            flex-shrink: 0;
+        }
+
+        .avatar-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            min-width: 0; /* Allow text to wrap */
+        }
+
+        .profile-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .profile-handle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.2;
+        }
+
+        .tweet-timestamp { /* Container for the Follow button */
+            flex-shrink: 0;
+            margin-left: 8px; /* Space between profile info and follow button */
+            align-self: flex-start; /* Align button to the top of its container */
+            padding-top: 2px; /* Slight adjustment to align with top of name */
+        }
+
+        .follow-button-ui {
+            background-color: #0F1419; /* Near black, Twitter's dark theme button */
+            color: white;
+            border: 1px solid #0F1419; /* For consistent look, can be transparent if no border needed */
+            padding: 4px 12px; /* Adjusted padding */
+            border-radius: 9999px; /* Pill shape */
+            font-size: 13px;
+            font-weight: 600; /* Twitter uses bold for Follow */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.2;
+            cursor: default; /* It's non-interactive in UI */
+            white-space: nowrap;
+        }
+
+        .tweet-content {
+            margin-bottom: 16px;
+        }
+
+        .tweet-body {
+            font-size: 16px;
+            line-height: 1.4;
+            color: var(--text-primary);
+            word-wrap: break-word;
+        }
+
+        /* Hashtag Styling */
+        .tweet-body .hashtag {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .tweet-body .hashtag:hover {
+            text-decoration: underline;
+        }
+
+        /* Tweet Actions */
+        .tweet-actions {
+            border-top: 1px solid var(--border-light);
+            padding-top: 12px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-small);
+            background: var(--background-white);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            background: var(--background-hover);
+            border-color: var(--border-medium);
+            transform: translateY(-1px);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        .action-btn.copy-btn:hover {
+            color: var(--success-green);
+            border-color: var(--success-green);
+        }
+
+        .action-btn.regenerate-btn:hover {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .action-btn.download-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+        }
+
+        .action-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .btn-label {
+            white-space: nowrap;
+        }
+
+        /* ============================================
+           STATUS MESSAGES
+           ============================================ */
+
+        .status-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .status-message {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border-radius: var(--radius-medium);
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: var(--shadow-heavy);
+            transform: translateX(100%);
+            transition: transform var(--transition-smooth);
+            margin-bottom: 8px;
+        }
+
+        .status-message.show {
+            transform: translateX(0);
+        }
+
+        .success-message {
+            background: var(--success-green);
+            color: white;
+        }
+
+        .error-message {
+            background: var(--error-red);
+            color: white;
+        }
+
+        .status-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           HIDDEN ELEMENTS
+           ============================================ */
+
+        .hidden-canvas {
+            position: absolute;
+            left: -9999px; /* Keep it off-screen */
+            top: -9999px;
+            visibility: hidden; /* Ensure it's not visible but can be drawn on */
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+
+        .app-footer {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid var(--border-light);
+            margin-top: auto;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .app-container {
+                padding: 40px;
+                gap: 48px;
+            }
+
+            .app-title {
+                font-size: 3rem;
+            }
+
+            .app-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .input-section,
+            .output-section {
+                padding: 40px;
+            }
+
+            .paste-input {
+                min-height: 140px;
+                font-size: 17px;
+            }
+
+            .action-buttons {
+                gap: 12px;
+            }
+
+            .action-btn {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .app-container {
+                max-width: 900px;
+                padding: 60px 40px;
+            }
+
+            .tool-interface {
+                gap: 56px;
+            }
+
+            .tweet-preview-container {
+                max-width: 600px;
+            }
+
+            .tweet-card {
+                padding: 20px;
+            }
+
+            .profile-section {
+                gap: 16px;
+            }
+
+            .avatar-img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .profile-name {
+                font-size: 16px;
+            }
+
+            .profile-handle {
+                font-size: 15px;
+            }
+
+            .tweet-body {
+                font-size: 17px;
+                line-height: 1.5;
+            }
+            .follow-button-ui {
+                padding: 5px 14px;
+                font-size: 14px;
+            }
+        }
+
+        /* Large Desktop & TV Styles */
+        @media (min-width: 1440px) {
+            .app-container {
+                max-width: 1000px;
+                padding: 80px 60px;
+            }
+
+            .app-title {
+                font-size: 3.5rem;
+            }
+
+            .input-section,
+            .output-section {
+                padding: 48px;
+            }
+
+            .paste-input {
+                min-height: 160px;
+                font-size: 18px;
+            }
+
+            .tweet-body {
+                font-size: 18px;
+                line-height: 1.6;
+            }
+        }
+
+        /* High DPI Display Optimization */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .tweet-card {
+                border-width: 0.5px;
+            }
+
+            .action-btn {
+                border-width: 0.5px;
+            }
+        }
+
+        /* Accessibility Improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus Improvements for Keyboard Navigation */
+        button:focus-visible,
+        .paste-input:focus-visible {
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .status-container,
+            .action-buttons,
+            .generate-section,
+            .follow-button-ui { /* Hide UI follow button in print */
+                display: none;
+            }
+
+            .tweet-card {
+                box-shadow: none;
+                border: 2px solid var(--border-medium);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Application Container -->
+    <div class="app-container">
+
+        <!-- Header Section -->
+        <header class="app-header" role="banner">
+            <div class="header-content">
+                <h1 class="app-title">Twitter Caption Rewriter</h1>
+                <p class="app-subtitle">Transform competitor content into high-performance tweets</p>
+            </div>
+        </header>
+
+        <!-- Main Tool Interface -->
+        <main class="tool-interface" role="main">
+
+            <!-- Input Section -->
+            <section class="input-section" aria-labelledby="input-heading">
+                <h2 id="input-heading" class="section-title">Paste Competitor Tweet or Caption</h2>
+
+                <div class="input-container">
+                    <!-- Paste Input Box with Clipboard Integration -->
+                    <div class="paste-box-wrapper">
+                        <textarea
+                            id="competitor-input"
+                            class="paste-input"
+                            placeholder="Paste your competitor's tweet or Instagram caption here..."
+                            aria-describedby="input-help"
+                            rows="6"
+                        ></textarea>
+
+                        <!-- Clipboard Paste Button -->
+                        <button
+                            id="paste-btn"
+                            class="paste-icon-btn"
+                            type="button"
+                            aria-label="Paste from clipboard"
+                            title="Paste from clipboard"
+                        >
+                            <svg class="clipboard-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="m5 15-4-4 4-4"></path>
+                                <path d="m11 11 4 4-4 4"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <p id="input-help" class="input-help-text">
+                        Paste any Twitter tweet or Instagram caption to get a professionally rewritten version
+                    </p>
+                </div>
+
+                <!-- Generate Button -->
+                <div class="generate-section">
+                    <button
+                        id="generate-btn"
+                        class="generate-button"
+                        type="button"
+                        aria-describedby="generate-help"
+                    >
+                        <span class="btn-text">Generate Tweet</span>
+                        <div class="loading-spinner" aria-hidden="true"></div>
+                    </button>
+                    <p id="generate-help" class="generate-help-text">
+                        Uses advanced AI to rewrite content while maintaining core message and facts
+                    </p>
+                </div>
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section" aria-labelledby="output-heading">
+                <h2 id="output-heading" class="section-title">Generated Tweet</h2>
+
+                <!-- Tweet Preview Card -->
+                <div class="tweet-preview-container">
+                    <article class="tweet-card" role="article" aria-labelledby="tweet-author">
+
+                        <!-- Tweet Header -->
+                        <header class="tweet-header">
+                            <div class="profile-section">
+                                <div class="profile-avatar">
+                                    <img
+                                        id="profile-image"
+                                        class="avatar-img"
+                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23E1E8ED'/%3E%3Cpath d='M20 18c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23657786'/%3E%3C/svg%3E"
+                                        alt="Profile avatar"
+                                        width="40"
+                                        height="40"
+                                    >
+                                </div>
+
+                                <div class="profile-info">
+                                    <h3 id="tweet-author" class="profile-name">Loading...</h3>
+                                    <p class="profile-handle">@loading</p>
+                                </div>
+                            </div>
+
+                            <div class="tweet-timestamp">
+                                <!-- Timestamp replaced by Follow button -->
+                                <button class="follow-button-ui" aria-hidden="true" disabled>Follow</button>
+                            </div>
+                        </header>
+
+                        <!-- Tweet Content -->
+                        <div class="tweet-content">
+                            <p id="tweet-text" class="tweet-body">
+                                Your rewritten tweet will appear here after generation...
+                            </p>
+                        </div>
+
+                        <!-- Tweet Actions -->
+                        <footer class="tweet-actions">
+                            <div class="action-buttons">
+                                <!-- Copy Tweet Button -->
+                                <button
+                                    id="copy-tweet-btn"
+                                    class="action-btn copy-btn"
+                                    type="button"
+                                    aria-label="Copy tweet to clipboard"
+                                    title="Copy tweet"
+                                >
+                                    <svg class="action-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="m5 15-4-4 4-4"></path>
+                                    </svg>
+                                    <span class="btn-label">Copy</span>
+                                </button>
+
+                                <!-- Regenerate Button -->
+                                <button
+                                    id="regenerate-btn"
+                                    class="action-btn regenerate-btn"
+                                    type="button"
+                                    aria-label="Generate new version"
+                                    title="Regenerate tweet"
+                                >
+                                    <svg class="action-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="23 4 23 10 17 10"></polyline>
+                                        <polyline points="1 20 1 14 7 14"></polyline>
+                                        <path d="m3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                                    </svg>
+                                    <span class="btn-label">Regenerate</span>
+                                </button>
+
+                                <!-- Download Image Button -->
+                                <button
+                                    id="download-btn"
+                                    class="action-btn download-btn"
+                                    type="button"
+                                    aria-label="Download tweet as image"
+                                    title="Download as image"
+                                >
+                                    <svg class="action-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    <span class="btn-label">Download</span>
+                                </button>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Hidden Canvas for Image Generation -->
+        <canvas
+            id="tweet-canvas"
+            class="hidden-canvas"
+            width="1200"
+            height="800" <!-- Initial height, will be adjusted by JS -->
+            aria-hidden="true"
+        ></canvas>
+
+        <!-- Status Messages -->
+        <div id="status-container" class="status-container" role="status" aria-live="polite">
+            <div id="success-message" class="status-message success-message" aria-hidden="true">
+                <svg class="status-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span class="status-text">Tweet copied to clipboard!</span>
+            </div>
+
+            <div id="error-message" class="status-message error-message" aria-hidden="true">
+                <svg class="status-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+                <span class="status-text">Something went wrong. Please try again.</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer" role="contentinfo">
+            <p class="footer-text">
+                Professional-grade social media rewriting tool • Built for content creators and marketers
+            </p>
+        </footer>
+    </div>
+
+    <!-- API Configuration (Hidden) -->
+    <script type="application/json" id="api-config">
+    {
+        "apiKey": "AIzaSyBe2aJEQyzFhuu7hA4Wu_s3s5rh5scWY3I",
+        "apiEndpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+        "systemPrompt": "You are a top-tier content strategist and social media specialist who earns over $100,000 annually writing viral content for creators, influencers, and entertainment brands. You’ve previously worked with names like Ashneer Grover, CarryMinati, and major entertainment news pages like InstantBollywood and Pinkvilla.\n\nYou are now being hired as my personal **Twitter content expert** to repurpose content from competitors (could be blog posts, YouTube video transcripts, Instagram captions, or tweets) into **short, self-contained, punchy tweets** that deliver the **core message clearly and quickly**.\n\n**Your task:**\n\nI will give you a piece of content (like a blog post, Instagram caption, tweet, or YouTube transcript). Your job is to **read and extract only the main point or update**, and **convert it into a tweet** that:\n\n1. Is self-contained (doesn’t require the user to go read the original blog, watch a video, or open a link to understand the message).\n2. Is **short and crisp** – ideally **just one line**, or maximum two if it’s absolutely necessary.\n3. **No personal opinions, no commentary, no fluff, no filler.** Just the facts.\n4. Use hashtags only for names (#TejasswiPrakash, #BiggBossOTT, #GauravKhanna) – not random keywords.\n5. **No emojis, no over-formatting, no engagement bait.**\n6. Tone of voice: Professional, news-style, clear and neutral.\n\n**You are not allowed to write generic, boring, or AI-sounding tweets. They should feel like they were written by a pro who understands what gets engagement.**\n\n### To guide your output quality, here are examples:\n\n**Bad tweet:**\n> Real-life couples like #TejasswiPrakash–#KaranKundrra and #HinaKhan–#RockyJaiswal have reportedly been approached for a new reality show titled Shola Aur Shabnam. The show will test the chemistry, trust, and compatibility of celebrity jodis through unique challenges. #AnkitaLokhande and #VickyJain are expected to host.\n\n**Why it sucks:**  \nToo long. Most users won’t read this much. The core message is buried in fluff.\n\n---\n\n**Good tweet #1:**\n> Indian boxer #NeerajGoyat has replaced #AsimRiaz as the new mentor in Amazon MX Player's #Battleground show.\n\n**Why it’s good:**  \nClear, short, self-contained. No extra link or explanation needed.\n\n---\n\n**Good tweet #2:**\n> Congratulations to #GauravKhanna on winning #CelebrityMasterChef and becoming India’s first-ever Celebrity MasterChef!  \nNikki Tamboli ended as the 1st runner-up, while Tejasswi Prakash finished in 3rd place.\n\n**Why it’s good:**  \nTwo lines used only because all 3 placements were relevant. Still sharp and info-rich.\n\n---\n\n**Bad tweet:**\n> Nouran Aly, wife of #BiggBossOTT fame Vivian Dsena, shared a congratulatory message on social media for Twinkle Arora on her new lead role in the Star Plus show Jhanak. Arora, known for her role in Udaariyaan alongside Dsena, is taking over as the lead following the exit of Hiba Nawab and Krushal Ahuja. Aly expressed strong support for Arora, highlighting their close bond.\n\n**Why it sucks:**  \nWay too long. Over-explains. Could have been 1 line.\n\n---\n\n**Good tweet #3:**\n> #BiggBossOTT is not canceled but may be delayed by 2 months. Expected to launch in August. Platform still unconfirmed.\n\n**Why it’s good:**  \nCore update, clear message, still leaves user informed without needing full article.\n\n**Your Output Must Match These “Good Tweet” Examples.** Do not rewrite them into my topic or give generic AI alternatives. Give me tweet-worthy copy just like the examples — short, snappy, informative, and *realistic* for high engagement.\n\n**Your tweet should look like it came from a pro who charged $500 for this single task — because no one comes close to your precision, brevity, and clarity.**\n\nNow wait for my input. keep in mind don't user double quataions mark or any symbol. I will share content, and you will deliver a final tweet that’s ready to be posted or turned into an image."
+    }
+    </script>
+
+        <script>
+                /**
+         * ============================================
+         * PREMIUM TWITTER REWRITER TOOL - JAVASCRIPT
+         * Advanced AI-Powered Social Media Tool
+         * ============================================
+         */
+
+        class TwitterRewriterTool {
+            constructor() {
+                this.config = this.loadConfiguration();
+                this.currentTweetData = null;
+                this.isGenerating = false;
+                this.initializeApplication();
+            }
+
+            /**
+             * Load API configuration from embedded JSON
+             */
+            loadConfiguration() {
+                try {
+                    const configElement = document.getElementById('api-config');
+                    return JSON.parse(configElement.textContent);
+                } catch (error) {
+                    console.error('Failed to load API configuration:', error);
+                    this.showStatusMessage('API config error. Check console.', 'error');
+                    return null;
+                }
+            }
+
+            /**
+             * Initialize the application with event listeners and setup
+             */
+            initializeApplication() {
+                this.cacheElements();
+                this.attachEventListeners();
+                this.initializeClipboardAPI();
+                this.validateInput(); // Initial validation
+                console.log('Twitter Rewriter Tool initialized successfully');
+            }
+
+            /**
+             * Cache DOM elements for performance
+             */
+            cacheElements() {
+                this.elements = {
+                    pasteInput: document.getElementById('competitor-input'),
+                    pasteBtn: document.getElementById('paste-btn'),
+                    generateBtn: document.getElementById('generate-btn'),
+                    profileImage: document.getElementById('profile-image'),
+                    tweetAuthor: document.getElementById('tweet-author'),
+                    profileHandle: document.querySelector('.profile-handle'),
+                    tweetText: document.getElementById('tweet-text'),
+                    copyBtn: document.getElementById('copy-tweet-btn'),
+                    regenerateBtn: document.getElementById('regenerate-btn'),
+                    downloadBtn: document.getElementById('download-btn'),
+                    successMessage: document.getElementById('success-message'),
+                    errorMessage: document.getElementById('error-message'),
+                    canvas: document.getElementById('tweet-canvas')
+                };
+            }
+
+            /**
+             * Attach event listeners to interactive elements
+             */
+            attachEventListeners() {
+                this.elements.pasteBtn.addEventListener('click', () => this.handlePasteFromClipboard());
+                this.elements.generateBtn.addEventListener('click', () => this.handleGenerateTweet());
+                this.elements.copyBtn.addEventListener('click', () => this.handleCopyTweet());
+                this.elements.regenerateBtn.addEventListener('click', () => this.handleRegenerateTweet());
+                this.elements.downloadBtn.addEventListener('click', () => this.handleDownloadImage());
+
+                this.elements.pasteInput.addEventListener('input', () => this.validateInput());
+
+                document.addEventListener('keydown', (e) => this.handleKeyboardShortcuts(e));
+            }
+
+            initializeClipboardAPI() {
+                if (!navigator.clipboard || !navigator.clipboard.readText) {
+                    this.elements.pasteBtn.style.display = 'none';
+                    console.warn('Clipboard readText API not supported. Paste button hidden.');
+                }
+            }
+
+            async handlePasteFromClipboard() {
+                try {
+                    if (navigator.clipboard && navigator.clipboard.readText) {
+                        const clipboardText = await navigator.clipboard.readText();
+                        if (clipboardText.trim()) {
+                            this.elements.pasteInput.value = clipboardText;
+                            this.validateInput();
+                            this.showStatusMessage('Content pasted successfully!', 'success');
+                        } else {
+                            this.showStatusMessage('Clipboard is empty', 'error');
+                        }
+                    }
+                } catch (error) {
+                    console.error('Clipboard read failed:', error);
+                    this.showStatusMessage('Unable to access clipboard', 'error');
+                }
+            }
+
+            validateInput() {
+                const inputText = this.elements.pasteInput.value.trim();
+                const isValid = inputText.length > 10;
+
+                this.elements.generateBtn.disabled = !isValid || this.isGenerating;
+
+                if (this.elements.generateBtn.disabled && !this.isGenerating && !isValid) {
+                     this.elements.generateBtn.classList.add('disabled');
+                } else if (!this.isGenerating && isValid) {
+                     this.elements.generateBtn.classList.remove('disabled');
+                }
+            }
+
+            async handleGenerateTweet() {
+                const inputText = this.elements.pasteInput.value.trim();
+
+                if (!inputText || this.isGenerating || !this.config) return;
+
+                this.setLoadingState(true);
+
+                try {
+                    const rewrittenTweet = await this.callGoogleAI(inputText);
+                    const tweetData = this.generateTweetData(rewrittenTweet);
+
+                    this.displayTweet(tweetData);
+                    this.currentTweetData = tweetData;
+
+                    this.showStatusMessage('Tweet generated successfully!', 'success');
+                } catch (error) {
+                    console.error('Tweet generation failed:', error);
+                    this.showStatusMessage(error.message.includes('API key not valid') ? 'API Key Error. Please check configuration.' : 'Failed to generate tweet. Please try again.', 'error');
+                } finally {
+                    this.setLoadingState(false);
+                }
+            }
+
+            async callGoogleAI(inputText) {
+                if (!this.config.apiKey || !this.config.apiEndpoint) {
+                    throw new Error('API key or endpoint is missing in configuration.');
+                }
+
+                const requestBody = {
+                    contents: [{
+                        parts: [{
+                            text: `${this.config.systemPrompt}\n\nInput Text:\n${inputText}`
+                        }]
+                    }]
+                };
+
+                const response = await fetch(`${this.config.apiEndpoint}?key=${this.config.apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestBody)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    const errorDetail = errorData.error ? errorData.error.message : `HTTP ${response.status}`;
+                    console.error('API Error Data:', errorData);
+                    throw new Error(`API request failed: ${errorDetail}`);
+                }
+
+                const data = await response.json();
+
+                if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0]) {
+                    return data.candidates[0].content.parts[0].text.trim();
+                } else {
+                    console.error('Invalid API response structure:', data);
+                    throw new Error('Invalid API response format');
+                }
+            }
+
+            generateTweetData(tweetText) {
+                const profile = this.generateIndianProfile();
+                return {
+                    profileName: profile.name,
+                    profileHandle: profile.handle,
+                    profileImage: this.generateProfileAvatar(profile.name),
+                    tweetText: this.formatTweetText(tweetText),
+                    originalText: tweetText,
+                };
+            }
+
+            generateIndianProfile() {
+                const firstNames = {
+                    male: ['Rohan', 'Arjun', 'Vikram', 'Karan', 'Rajesh', 'Aditya', 'Sanjay', 'Rahul', 'Amit', 'Deepak', 'Gaurav', 'Manish', 'Nikhil', 'Prashant', 'Ravi'],
+                    female: ['Priya', 'Sneha', 'Pooja', 'Kavya', 'Riya', 'Anita', 'Meera', 'Siya', 'Nisha', 'Shruti', 'Divya', 'Aarti', 'Sunita', 'Rekha', 'Geeta']
+                };
+                const surnames = ['Sharma', 'Kapoor', 'Singh', 'Gupta', 'Agarwal', 'Jain', 'Mehta', 'Shah', 'Patel', 'Kumar', 'Verma', 'Chopra', 'Malhotra', 'Khanna', 'Bansal', 'Joshi', 'Tiwari', 'Saxena', 'Pandey', 'Mishra'];
+                const gender = Math.random() > 0.5 ? 'male' : 'female';
+                const firstName = firstNames[gender][Math.floor(Math.random() * firstNames[gender].length)];
+                const lastName = surnames[Math.floor(Math.random() * surnames.length)];
+                const fullName = `${firstName} ${lastName}`;
+                const handleOptions = [
+                    firstName.toLowerCase() + lastName.toLowerCase(),
+                    firstName.toLowerCase() + lastName.toLowerCase().substring(0, 3),
+                    firstName.toLowerCase() + '_' + lastName.toLowerCase(),
+                    firstName.toLowerCase() + (Math.floor(Math.random() * 90) + 10),
+                    firstName.substring(0, 3).toLowerCase() + lastName.toLowerCase(),
+                    firstName.toLowerCase() + lastName.substring(0, 2).toLowerCase() + (Math.floor(Math.random() * 9) + 1)
+                ];
+                const handle = '@' + handleOptions[Math.floor(Math.random() * handleOptions.length)];
+                return { name: fullName, handle: handle };
+            }
+
+            generateProfileAvatar(name) {
+                const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0,2);
+                const colors = ['#1DA1F2', '#17BF63', '#E0245E', '#794BC4', '#F45D22', '#FFAD1F', '#F47A22'];
+                const bgColor = colors[Math.floor(Math.random() * colors.length)];
+                const svg = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="24" fill="${bgColor}"/>
+                        <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+                            ${initials}
+                        </text>
+                    </svg>
+                `;
+                return `data:image/svg+xml;base64,${btoa(svg)}`;
+            }
+
+            formatTweetText(text) {
+                return text.replace(/(^|\s)#([a-zA-Z0-9_]+)/g, '$1<span class="hashtag">#$2</span>');
+            }
+
+            displayTweet(tweetData) {
+                this.elements.profileImage.src = tweetData.profileImage;
+                this.elements.profileImage.alt = `${tweetData.profileName} profile picture`;
+                this.elements.tweetAuthor.textContent = tweetData.profileName;
+                this.elements.profileHandle.textContent = tweetData.profileHandle;
+                this.elements.tweetText.innerHTML = tweetData.tweetText;
+
+                this.elements.tweetText.style.opacity = '0';
+                setTimeout(() => {
+                    this.elements.tweetText.style.transition = 'opacity 0.3s ease';
+                    this.elements.tweetText.style.opacity = '1';
+                }, 100);
+            }
+
+            async handleCopyTweet() {
+                if (!this.currentTweetData) {
+                    this.showStatusMessage('No tweet to copy', 'error');
+                    return;
+                }
+                try {
+                    const plainText = this.currentTweetData.originalText;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        await navigator.clipboard.writeText(plainText);
+                        this.showStatusMessage('Tweet copied to clipboard!', 'success');
+                    } else {
+                        this.fallbackCopyToClipboard(plainText);
+                        this.showStatusMessage('Tweet copied (fallback)!', 'success');
+                    }
+                } catch (error) {
+                    console.error('Copy failed:', error);
+                    this.showStatusMessage('Failed to copy tweet', 'error');
+                }
+            }
+
+            fallbackCopyToClipboard(text) {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed'; textArea.style.opacity = '0';
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback copy failed:', err);
+                }
+                document.body.removeChild(textArea);
+            }
+
+            async handleRegenerateTweet() {
+                if (!this.elements.pasteInput.value.trim() || this.isGenerating) {
+                     this.showStatusMessage('Please enter text to regenerate or wait for current generation.', 'error');
+                    return;
+                }
+                await this.handleGenerateTweet();
+            }
+
+            async handleDownloadImage() {
+                if (!this.currentTweetData) {
+                    this.showStatusMessage('No tweet to download', 'error');
+                    return;
+                }
+
+                try {
+                    const canvas = this.elements.canvas;
+                    const ctx = canvas.getContext('2d');
+
+                    let initialLogicalCanvasWidth;
+                    const isMobileView = window.matchMedia("(max-width: 767px)").matches;
+
+                    if (isMobileView) {
+                        initialLogicalCanvasWidth = 600; // Base for mobile
+                    } else {
+                        initialLogicalCanvasWidth = 750; // Base for desktop
+                    }
+
+                    await this.renderTweetToCanvas(ctx, this.currentTweetData, initialLogicalCanvasWidth);
+
+                    canvas.toBlob((blob) => {
+                        if (!blob) {
+                            this.showStatusMessage('Error creating image blob.', 'error');
+                            return;
+                        }
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = `tweet-${this.currentTweetData.profileHandle.substring(1)}-${Date.now()}.png`;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(url);
+
+                        this.showStatusMessage('Tweet image downloaded!', 'success');
+                    }, 'image/png', 0.95);
+
+                } catch (error) {
+                    console.error('Download failed:', error);
+                    this.showStatusMessage('Failed to download image. See console.', 'error');
+                }
+            }
+
+            calculateTextMetrics(ctx, text, maxWidth, lineHeight) {
+                const words = text.split(/(\s+)/); // Keep spaces to measure them
+                let currentLine = '';
+                let lines = [];
+
+                for (let i = 0; i < words.length; i++) {
+                    const word = words[i];
+                    const testLine = currentLine + word;
+                    const metrics = ctx.measureText(testLine);
+
+                    if (metrics.width > maxWidth && currentLine !== '') {
+                        lines.push(currentLine.trimEnd()); // Trim trailing space from the completed line
+                        currentLine = word.trimStart(); // Start new line with the word, trimming leading space if word itself was a space
+                        if (word === ' ' && currentLine === ' ') currentLine = ''; // Avoid lines with only a space
+                    } else {
+                        currentLine = testLine;
+                    }
+                }
+                if (currentLine.trim() !== '') { // Add the last line if it has content
+                    lines.push(currentLine.trimEnd());
+                }
+                if (lines.length === 0 && text.trim() !== '') { // Handle case where text is short and fits on one line
+                     lines.push(text.trimEnd());
+                }
+
+
+                const lineCount = lines.length || 1;
+                return {
+                    lines: lines,
+                    height: lineCount * lineHeight,
+                    lineCount: lineCount
+                };
+            }
+
+            async renderTweetToCanvas(ctx, tweetData, logicalCanvasWidthFromParam) {
+                const canvas = this.elements.canvas;
+                const pixelRatio = window.devicePixelRatio || 1;
+                const scaleFactor = 2; // For higher resolution output
+
+                let logicalCanvasWidth = logicalCanvasWidthFromParam;
+                const isMobileViewForImage = window.matchMedia("(max-width: 767px)").matches;
+                if (isMobileViewForImage) {
+                    logicalCanvasWidth = 372; // Target width for mobile-like tweet images
+                } else {
+                    logicalCanvasWidth = 700; // Target width for desktop-like tweet images
+                }
+
+                // --- Define Styles and Metrics (Logical Pixels) ---
+                const twitterFont = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif`;
+                const mainPadding = Math.max(12, logicalCanvasWidth * 0.03); // Reduced padding for tighter look
+                const internalSpacing = Math.max(8, logicalCanvasWidth * 0.015); // Spacing between avatar & name, name & handle etc.
+                const avatarSize = Math.max(40, logicalCanvasWidth * 0.07); // Standard Twitter avatar size is ~48px, this makes it responsive
+
+                // Font sizes (closer to Twitter's defaults)
+                const nameFontSize = Math.max(15, Math.min(18, logicalCanvasWidth * 0.025));
+                const handleFontSize = Math.max(14, Math.min(17, logicalCanvasWidth * 0.024));
+                const textFontSize = Math.max(15, Math.min(19, logicalCanvasWidth * 0.026)); // Twitter body text is often 15px
+                const textLineHeight = textFontSize * 1.35; // Tighter line height
+                const followButtonFontSize = Math.max(13, Math.min(15, logicalCanvasWidth * 0.022));
+
+                // --- Element Positions ---
+                const avatarXPos = mainPadding;
+                const avatarYPos = mainPadding;
+
+                const nameXPos = avatarXPos + avatarSize + internalSpacing;
+                const nameYPos = avatarYPos; // Align name top with avatar top
+
+                const handleYPos = nameYPos + nameFontSize + (internalSpacing * 0.25); // Small gap between name and handle
+
+                // Tweet Text Position (starts aligned with avatar's left, below header)
+                const textStartX = avatarXPos;
+                const gapBelowHeader = internalSpacing * 1.8; // Gap between avatar/name block and main text
+                const textActualStartY = avatarYPos + avatarSize + gapBelowHeader;
+                const textMaxWidth = logicalCanvasWidth - avatarXPos - mainPadding; // Text runs from avatar's left to canvas right padding
+
+                // --- Calculate Text Block Height ---
+                ctx.font = `${textFontSize}px ${twitterFont}`;
+                const textMetrics = this.calculateTextMetrics(ctx, tweetData.originalText, textMaxWidth, textLineHeight);
+
+                // --- Calculate Total Canvas Height ---
+                const bottomMargin = mainPadding;
+                let calculatedLogicalCanvasHeight = textActualStartY + textMetrics.height + bottomMargin;
+
+                // Safeguard for minimum height
+                const minTextHeightForSafeguard = textLineHeight * 1.2;
+                const minOverallHeight = (avatarYPos + avatarSize + gapBelowHeader) + minTextHeightForSafeguard + bottomMargin;
+                calculatedLogicalCanvasHeight = Math.max(calculatedLogicalCanvasHeight, minOverallHeight);
+
+                // --- Setup Canvas Dimensions ---
+                canvas.width = logicalCanvasWidth * scaleFactor * pixelRatio;
+                canvas.height = calculatedLogicalCanvasHeight * scaleFactor * pixelRatio;
+                ctx.scale(scaleFactor * pixelRatio, scaleFactor * pixelRatio);
+
+                // --- Draw Rounded Background and Clip ---
+                const borderRadius = 12; // Standard Twitter card border radius
+                ctx.fillStyle = '#FFFFFF'; // White background
+                this.roundRect(ctx, 0, 0, logicalCanvasWidth, calculatedLogicalCanvasHeight, borderRadius);
+                ctx.fill();
+                ctx.clip(); // Clip subsequent drawing to this rounded rectangle
+
+                // --- Load Profile Image and Draw Content ---
+                const profileImg = new Image();
+                profileImg.crossOrigin = 'anonymous';
+
+                return new Promise((resolve, reject) => {
+                    const drawContent = (isAvatarDrawn) => {
+                        try {
+                            // Draw Avatar if loaded
+                            if (isAvatarDrawn) {
+                                ctx.save();
+                                ctx.beginPath();
+                                ctx.arc(avatarXPos + avatarSize / 2, avatarYPos + avatarSize / 2, avatarSize / 2, 0, 2 * Math.PI);
+                                ctx.closePath();
+                                ctx.clip();
+                                ctx.drawImage(profileImg, avatarXPos, avatarYPos, avatarSize, avatarSize);
+                                ctx.restore();
+                            }
+
+                            // Profile Name
+                            ctx.fillStyle = '#0F1419'; // Twitter Black
+                            ctx.font = `bold ${nameFontSize}px ${twitterFont}`;
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = 'top';
+                            const profileInfoMaxWidth = logicalCanvasWidth - nameXPos - mainPadding - (logicalCanvasWidth * 0.15); // Reserve space for follow btn
+                            ctx.fillText(tweetData.profileName, nameXPos, nameYPos, profileInfoMaxWidth);
+
+
+                            // Profile Handle
+                            ctx.fillStyle = '#536471'; // Twitter Grey for handle
+                            ctx.font = `${handleFontSize}px ${twitterFont}`;
+                            ctx.fillText(tweetData.profileHandle, nameXPos, handleYPos, profileInfoMaxWidth);
+
+                            // Follow Button
+                            const followButtonText = "Follow";
+                            ctx.font = `bold ${followButtonFontSize}px ${twitterFont}`; // Bold text for Follow button
+                            const followButtonMetrics = ctx.measureText(followButtonText);
+                            const followButtonContentWidth = followButtonMetrics.width;
+                            const followButtonPaddingHorizontal = internalSpacing * 1.2;
+                            const followButtonHeight = followButtonFontSize + (internalSpacing * 0.8);
+                            const followButtonWidth = followButtonContentWidth + (2 * followButtonPaddingHorizontal);
+
+                            const actualFollowButtonX = logicalCanvasWidth - mainPadding - followButtonWidth;
+                            const actualFollowButtonY = avatarYPos; // Align with top of avatar/name
+
+                            ctx.fillStyle = '#0F1419'; // Black background for Follow button
+                            this.roundRect(ctx, actualFollowButtonX, actualFollowButtonY, followButtonWidth, followButtonHeight, followButtonHeight / 2); // Pill shape
+                            ctx.fill();
+
+                            ctx.fillStyle = '#FFFFFF'; // White text for Follow button
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillText(followButtonText, actualFollowButtonX + followButtonWidth / 2, actualFollowButtonY + followButtonHeight / 2);
+
+                            // Reset alignment & font for Tweet Text
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = 'top';
+                            ctx.fillStyle = '#0F1419'; // Default text color for tweet body
+                            ctx.font = `${textFontSize}px ${twitterFont}`; // Set font for tweet body for wrapText
+
+                            this.wrapText(ctx, tweetData.originalText, textStartX, textActualStartY, textMaxWidth, textLineHeight, calculatedLogicalCanvasHeight - bottomMargin, textMetrics.lines);
+
+                            resolve();
+                        } catch (e) {
+                            console.error("Error during canvas drawing:", e);
+                            reject(e);
+                        }
+                    };
+
+                    profileImg.onload = () => {
+                        drawContent(true); // Draw with avatar
+                    };
+                    profileImg.onerror = (e) => {
+                        console.error("Error loading profile image for canvas:", e);
+                        this.showStatusMessage('Error loading avatar. Drawing without it.', 'error');
+                        drawContent(false); // Draw without avatar, other elements will still be positioned correctly
+                    };
+                    profileImg.src = tweetData.profileImage;
+                });
+            }
+
+
+            roundRect(ctx, x, y, width, height, radius) {
+                if (typeof radius === 'number') {
+                    radius = {tl: radius, tr: radius, br: radius, bl: radius};
+                } else {
+                    radius = {...{tl: 0, tr: 0, br: 0, bl: 0}, ...radius};
+                }
+                ctx.beginPath();
+                ctx.moveTo(x + radius.tl, y);
+                ctx.lineTo(x + width - radius.tr, y);
+                ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
+                ctx.lineTo(x + width, y + height - radius.br);
+                ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+                ctx.lineTo(x + radius.bl, y + height);
+                ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
+                ctx.lineTo(x, y + radius.tl);
+                ctx.quadraticCurveTo(x, y, x + radius.tl, y);
+                ctx.closePath();
+            }
+
+            wrapText(ctx, text, x, y, maxWidth, lineHeight, maxY, preCalculatedLines = null) {
+                const defaultFillStyle = '#0F1419'; // Twitter text black
+                const hashtagColor = '#1DA1F2'; // Twitter blue for hashtags
+                // Font is already set on ctx before calling this function
+
+                const linesToDraw = preCalculatedLines || this.calculateTextMetrics(ctx, text, maxWidth, lineHeight).lines;
+                let currentY = y;
+
+                for (let i = 0; i < linesToDraw.length; i++) {
+                    // Check if drawing this line would exceed maxY. If so, attempt to truncate with ellipsis.
+                    if (currentY + lineHeight > maxY + (lineHeight * 0.1) && i < linesToDraw.length ) { // Add a small buffer
+                        let lineText = linesToDraw[i];
+                        let originalLineText = lineText; // Keep original for measurement
+
+                        let needsEllipsis = false;
+                        // Condition for needing ellipsis:
+                        // 1. If the current line's baseline already goes past maxY significantly
+                        // 2. OR if this is not the last pre-calculated line, and adding one more line would definitely overflow
+                        if (currentY + (lineHeight*0.7) > maxY) { // If more than 70% of line is cut
+                             needsEllipsis = true;
+                        } else if (i < linesToDraw.length -1 && (currentY + lineHeight + (lineHeight*0.7) > maxY) ) { // If next line would be mostly cut
+                            needsEllipsis = true;
+                        }
+
+                        if (needsEllipsis) {
+                            let tempLine = "";
+                            // Split by word to add ellipsis correctly
+                            const wordsInLine = originalLineText.split(/(\s+#?\S+|#?\S+\s+)/).filter(Boolean); // More robust split
+
+                            for (const currentWord of wordsInLine) {
+                                if (ctx.measureText(tempLine + currentWord + "...").width <= maxWidth) {
+                                    tempLine += currentWord;
+                                } else {
+                                    break; // Stop if adding word + ellipsis exceeds width
+                                }
+                            }
+                            lineText = tempLine.trimEnd() ? (tempLine.trimEnd() + "...") : "...";
+                        }
+
+                        this.drawLineWithHashtags(ctx, lineText, x, currentY, hashtagColor, defaultFillStyle);
+                        break; // Stop drawing further lines
+                    }
+
+                    // If no ellipsis needed for this line based on maxY check
+                    this.drawLineWithHashtags(ctx, linesToDraw[i], x, currentY, hashtagColor, defaultFillStyle);
+                    currentY += lineHeight;
+                }
+                ctx.fillStyle = defaultFillStyle; // Reset fill style
+            }
+
+
+            drawLineWithHashtags(ctx, line, x, y, hashtagColor, defaultColor) {
+                const segments = line.split(/(\s+#\S+)/); // Split by space then hashtag, or just hashtag
+                let currentX = x;
+                ctx.textBaseline = 'top'; // Ensure consistent baseline
+
+                for (let k = 0; k < segments.length; k++) {
+                    let segment = segments[k];
+                    if (!segment) continue;
+
+                    let isHashtag = segment.trim().startsWith('#') && segment.trim().length > 1 && !segment.includes("...");
+
+                    // Draw leading spaces if any (for segments that start with space after split)
+                    const leadingSpaces = segment.match(/^(\s*)/)[0];
+                    if (leadingSpaces.length > 0) {
+                        ctx.fillStyle = defaultColor;
+                        ctx.fillText(leadingSpaces, currentX, y);
+                        currentX += ctx.measureText(leadingSpaces).width;
+                        segment = segment.substring(leadingSpaces.length); // Remove drawn spaces
+                    }
+                    
+                    // Draw the word/hashtag itself
+                    if (segment) {
+                         ctx.fillStyle = isHashtag ? hashtagColor : defaultColor;
+                         ctx.fillText(segment, currentX, y);
+                         currentX += ctx.measureText(segment).width;
+                    }
+                }
+            }
+
+
+            setLoadingState(isLoading) {
+                this.isGenerating = isLoading;
+                this.elements.generateBtn.disabled = isLoading;
+
+                if (isLoading) {
+                    this.elements.generateBtn.classList.add('loading');
+                } else {
+                    this.elements.generateBtn.classList.remove('loading');
+                    this.validateInput();
+                }
+            }
+
+            showStatusMessage(message, type = 'success') {
+                const messageElement = type === 'success' ? this.elements.successMessage : this.elements.errorMessage;
+                const textElement = messageElement.querySelector('.status-text');
+
+                textElement.textContent = message;
+                messageElement.classList.add('show');
+                messageElement.setAttribute('aria-hidden', 'false');
+
+                setTimeout(() => {
+                    messageElement.classList.remove('show');
+                    messageElement.setAttribute('aria-hidden', 'true');
+                }, 3000);
+            }
+
+            handleKeyboardShortcuts(event) {
+                if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+                    event.preventDefault();
+                    if (!this.isGenerating && this.elements.pasteInput.value.trim()) {
+                        this.handleGenerateTweet();
+                    }
+                }
+
+                if ((event.ctrlKey || event.metaKey) && event.key === 'c' && this.currentTweetData && document.activeElement !== this.elements.pasteInput) {
+                    event.preventDefault();
+                    this.handleCopyTweet();
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.twitterRewriter = new TwitterRewriterTool();
+        });
+
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('Unhandled promise rejection:', event.reason);
+            if (window.twitterRewriter) {
+                let message = 'An unexpected error occurred.';
+                if (event.reason && event.reason.message) {
+                    message = event.reason.message;
+                }
+                if (event.reason && typeof event.reason.message === 'string' && event.reason.message.includes('Quota exceeded')) {
+                    message = 'API Quota Exceeded. Please check your API plan or try again later.';
+                }
+                window.twitterRewriter.showStatusMessage(message, 'error');
+            }
+        });
+    </script>
+</body>
+</html>
